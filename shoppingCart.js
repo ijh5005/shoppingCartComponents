@@ -21,8 +21,8 @@
   }
   
   //task service
-  $rootScope.checkoutItemsTotal;
-    this.decrement = (item) => {
+ app.service('task', function($rootScope, $interval, $timeout, data){
+  this.decrement = (item) => {
     let arrayIndex;
     const index = this.findIndexInArrayByIndex(item.index, $rootScope.shoppingCartItems);
     $rootScope.shoppingCartItems[index].quantity--;
@@ -93,4 +93,4 @@
       calculateTotal();
     })
   }
-  
+});
